@@ -1,0 +1,17 @@
+/* blocks/page.css */
+.page {
+    background-color: #2A2C2F; /* Задаем темный фон для всей страницы */
+    color: #FFFFFF; /* Задаем белый цвет текста по умолчанию */
+    font-family: 'Inter', Arial, sans-serif; /* Наш главный шрифт и запасные варианты */
+    -webkit-font-smoothing: antialiased; /* Улучшает отображение шрифтов в Chrome/Safari */
+    -moz-osx-font-smoothing: grayscale; /* Улучшает отображение шрифтов в Firefox */
+    -webkit-text-size-adjust: 100%; /* Запрещает iOS увеличивать шрифт в ландшафтном режиме */
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+
+    /* Центрируем контент */
+    max-width: 1280px;
+    min-width: 320px;
+    margin: 0 auto;
+}

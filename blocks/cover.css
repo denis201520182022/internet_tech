@@ -1,0 +1,110 @@
+/* blocks/cover.css (ИСПРАВЛЕННАЯ ВЕРСИЯ) */
+
+.cover {
+    max-width: 1184px;
+    min-height: 740px;
+    margin: 92px auto 0;
+    /* Устанавливаем фоновое изображение */
+    background-image: url(../images/cover-trains.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative; /* Оставляем это для позиционирования оверлея */
+}
+
+/* ЭТО КЛЮЧЕВОЕ ИЗМЕНЕНИЕ:
+   Мы стилизуем непосредственно саму ссылку <a> с классом .cover__overlay
+*/
+.cover__overlay {
+    /* 1. Стили для сброса поведения ссылки */
+    color: #FFFFFF;
+    text-decoration: none;
+
+    /* 2. Стили для центрирования контента (заголовка и подзаголовка) */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* 3. Стили для позиционирования и размера */
+    width: 100%;
+    height: 100%;
+    position: relative; /* Нужно для псевдо-элемента */
+    z-index: 1; /* Чтобы текст был поверх затемнения */
+}
+
+/* Псевдо-элемент ::before для создания слоя затемнения.
+   Этот код остается без изменений.
+*/
+.cover__overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #2A2C2F;
+    opacity: 0.3;
+    transition: opacity 0.3s ease-in-out;
+    z-index: -1; /* Помещаем затемнение ПОД текст, но НАД фоновой картинкой */
+}
+
+/* При наведении на ссылку, затемнение становится сильнее.
+   Этот код остается без изменений.
+*/
+.cover__overlay:hover::before {
+    opacity: 0.8;
+}
+
+
+/* Стили для текста остаются без изменений */
+.cover__title {
+    max-width: 560px;
+    margin: 0 0 32px;
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 76px;
+    text-align: center;
+}
+
+.cover__subtitle {
+    max-width: 360px;
+    margin: 0;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+}
+
+/* Медиа-запросы остаются без изменений */
+@media screen and (max-width: 1279px) {
+    .cover {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .cover {
+        min-height: 640px;
+        margin-top: 90px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .cover {
+        min-height: 480px;
+        margin-top: 66px;
+    }
+
+    .cover__title {
+        max-width: 288px;
+        font-size: 32px;
+        line-height: 35px;
+        margin-bottom: 16px;
+    }
+
+    .cover__subtitle {
+        max-width: 288px;
+        font-size: 14px;
+        line-height: 16px;
+    }
+}

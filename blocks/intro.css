@@ -1,0 +1,62 @@
+/* blocks/intro.css */
+.intro {
+    padding: 92px 0 92px 148px; /* Задаем отступы. Левый отступ самый большой */
+    max-width: 984px; /* Ограничиваем максимальную ширину всей секции */
+}
+
+.intro__title {
+    margin: 0 0 40px;
+    font-weight: 900;
+    font-size: 54px;
+    line-height: 58px;
+}
+
+.intro__text {
+    margin: 0 0 32px;
+    max-width: 690px; /* Ограничиваем ширину основного текста для читаемости */
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px; /* 1.625 - соотношение */
+}
+
+.intro__list {
+    list-style: none; /* Убираем маркеры */
+    margin: 0;
+    padding: 0;
+    max-width: 690px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+/* Это для жирного текста внутри пунктов списка */
+.intro__list-item-accent {
+    font-weight: 700;
+}
+
+
+/* ========== АДАПТИВНОСТЬ ========== */
+
+/* Для планшетов (768px - 1023px) */
+@media screen and (max-width: 1023px) {
+    .intro {
+        padding: 88px 24px; /* Уменьшаем отступы и делаем их симметричными */
+    }
+}
+
+/* Для мобильных устройств (до 767px) */
+@media screen and (max-width: 767px) {
+    .intro {
+        padding: 64px 16px; /* Еще уменьшаем отступы */
+    }
+
+    .intro__title {
+        font-size: 32px;
+        line-height: 35px;
+    }
+
+    .intro__text {
+        /* На мобильных текст занимает всю доступную ширину */
+        max-width: 100%;
+    }
+}

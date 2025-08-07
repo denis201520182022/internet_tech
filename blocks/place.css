@@ -1,0 +1,152 @@
+/* blocks/place.css */
+
+.places {
+    display: grid; /* Вся секция - это грид */
+    grid-template-columns: 1fr; /* Одна колонка, карточки идут друг под другом */
+    gap: 80px; /* Расстояние между карточками */
+    padding: 92px 48px 0;
+}
+
+.place {
+    display: grid;
+    /* Задаем 2 колонки: левая (заголовок/картинка) и правая (текст) */
+    grid-template-columns: 460px 1fr; /* Левая колонка - фиксированная, правая - занимает остальное место */
+    gap: 48px 40px; /* Отступы: 48px по вертикали, 40px по горизонтали */
+}
+
+.place__title {
+    grid-column: 1; /* Явно указываем, что заголовок в 1-й колонке */
+    grid-row: 1; /* И в 1-м ряду */
+    margin: 0;
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 76px;
+    align-self: end; /* Прижимаем заголовок к низу его ячейки */
+}
+
+.place__website {
+    grid-column: 2; /* Блок с URL - во 2-й колонке */
+    grid-row: 1; /* И в 1-м ряду */
+    align-self: end; /* Прижимаем к низу ячейки, чтобы он был на одном уровне с заголовком */
+}
+
+.place__url-heading {
+    margin: 0 0 12px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 2px;
+    color: #AAAAAA;
+}
+
+.place__link {
+    color: #FFFFFF;
+    font-size: 18px;
+    line-height: 22px;
+    transition: opacity 0.3s ease;
+}
+
+.place__link:hover {
+    opacity: 0.8;
+}
+
+.place__image {
+    grid-column: 1; /* Картинка - в 1-й колонке */
+    grid-row: 2; /* Но уже во 2-м ряду, под заголовком */
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.place__paragraphs {
+    grid-column: 2; /* Контейнер с текстом - во 2-й колонке */
+    grid-row: 2; /* И во 2-м ряду, рядом с картинкой */
+}
+
+.place__paragraph {
+    margin: 0 0 26px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 29px; /* 1.63 - соотношение */
+}
+
+/* Убираем нижний отступ у последнего параграфа в блоке */
+.place__paragraph:last-of-type {
+    margin-bottom: 0;
+}
+
+
+/* ========== АДАПТИВНОСТЬ ========== */
+
+/* Планшеты (768px - 1023px) */
+@media screen and (max-width: 1023px) {
+    .places {
+        padding: 88px 24px 0;
+        gap: 73px;
+    }
+
+    .place {
+        grid-template-columns: 340px 1fr; /* Уменьшаем ширину левой колонки */
+        gap: 48px 28px;
+    }
+
+    .place__title {
+        font-size: 42px;
+        line-height: 46px;
+    }
+
+    .place__paragraph {
+        font-size: 16px;
+        line-height: 26px;
+    }
+}
+
+/* Мобильные устройства (до 767px) */
+@media screen and (max-width: 767px) {
+    .places {
+        padding: 64px 0 0; /* Убираем боковые отступы у контейнера */
+        gap: 50px;
+    }
+
+    .place {
+        /* ВАЖНО: на мобильных мы перестраиваем грид в одну колонку */
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 0 16px; /* Добавляем отступы здесь, чтобы контент не прилипал к краям */
+    }
+
+    /* На мобильных все элементы теперь идут друг за другом, занимая всю ширину.
+       Нам не нужно переопределять их grid-column/grid-row, они сами встанут по порядку.
+       Нужно только скорректировать некоторые стили.
+    */
+    .place__title {
+        font-size: 32px;
+        line-height: 35px;
+    }
+
+    .place__website {
+        /* На мобильных блок с URL может быть где угодно, но по логике он должен быть под заголовком.
+           Поскольку грид теперь в одну колонку, он сам там и окажется.
+           Но мы убираем align-self, т.к. он больше не нужен. */
+        align-self: start;
+    }
+
+    .place__image {
+        /* Чтобы картинка не вылезала за пределы родителя с отступами, добавим ей max-width */
+        max-width: 100%;
+    }
+}
+
+/* Для самых маленьких экранов. Мы можем добавить еще один медиа-запрос,
+   чтобы карточка выглядела лучше, убрав ее внутренние отступы */
+@media screen and (max-width: 425px) {
+    .place {
+        padding: 0; /* Убираем отступы, картинка будет от края до края */
+    }
+
+    .place__title,
+    .place__website,
+    .place__paragraphs {
+        padding: 0 16px; /* А для текстовых элементов добавляем их обратно */
+    }
+}

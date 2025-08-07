@@ -1,0 +1,115 @@
+/* blocks/lead.css */
+.lead {
+    display: flex;
+    flex-direction: column; /* Располагаем элементы друг под другом */
+    align-items: center; /* Центрируем по горизонтали */
+    padding: 56px 0 0; /* Отступ сверху */
+    margin: 0 48px; /* Отступы по бокам, чтобы не прилипать к краям на очень широких экранах */
+}
+
+.lead__title {
+    max-width: 720px;
+    margin: 0 0 32px; /* Отступ снизу */
+    font-weight: 900;
+    font-size: 96px;
+    line-height: 100px; /* 1.04 - соотношение */
+    text-align: center;
+}
+
+.lead__subtitle {
+    max-width: 640px;
+    margin: 0 0 64px; /* Отступ снизу */
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px; /* 1.2 - соотношение */
+    text-align: center;
+}
+
+.lead__figure {
+    margin: 0; /* Убираем стандартные отступы у figure */
+    padding: 0;
+    width: 100%; /* Фигура занимает всю ширину контейнера lead */
+}
+
+.lead__image {
+    width: 100%; /* Картинка растягивается на всю ширину родителя (figure) */
+    display: block; /* Убирает микро-отступ под картинкой */
+}
+
+.lead__caption {
+    margin: 8px 0 0;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 1.5px; /* Межбуквенное расстояние */
+    text-transform: uppercase; /* Все буквы заглавные */
+}
+
+/* ========== АДАПТИВНОСТЬ ========== */
+
+/* Для больших ноутбуков (1024-1279px) */
+/* Этот промежуток покрывается базовыми стилями, но для примера можно добавить */
+@media screen and (max-width: 1279px) {
+    .lead {
+        margin: 0; /* Начиная с этого разрешения, боковые отступы у .lead не нужны, т.к. они есть у .header */
+                     /* и дальше будут у других секций */
+        padding-left: 48px; /* Но мы задаем их здесь, чтобы контент не прилегал к краям */
+        padding-right: 48px;
+    }
+}
+
+/* Для планшетов (768px - 1023px) */
+@media screen and (max-width: 1023px) {
+    .lead {
+        padding: 48px 24px 0; /* Уменьшаем отступы */
+    }
+
+    .lead__title {
+        max-width: 720px; /* Ширина остается большой */
+        font-size: 90px;  /* Но шрифт чуть меньше */
+        line-height: 94px;
+        margin-bottom: 32px;
+    }
+
+    .lead__subtitle {
+        font-size: 28px;
+        line-height: 34px;
+        margin-bottom: 56px;
+    }
+}
+
+
+/* Для мобильных устройств (до 767px) */
+@media screen and (max-width: 767px) {
+    .lead {
+        padding: 48px 0 0; /* Убираем боковые отступы у секции, контент будет от края до края */
+    }
+
+    .lead__title {
+        font-size: 50px;
+        line-height: 54px;
+        margin-bottom: 16px;
+        /* Ограничиваем ширину, чтобы текст красиво переносился */
+        max-width: calc(100% - 32px); /* Ширина экрана минус отступы по 16px */
+    }
+
+    .lead__subtitle {
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 40px;
+        max-width: calc(100% - 32px);
+    }
+
+    .lead__caption {
+        /* На мобильных сдвигаем подпись влево, добавляя отступ */
+        margin-left: 16px;
+    }
+}
+
+/* Корректировка для самых маленьких экранов (320px) */
+@media screen and (max-width: 425px) {
+    .lead__title {
+        font-size: 40px;
+        line-height: 44px;
+    }
+}

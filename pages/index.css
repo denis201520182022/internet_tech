@@ -1,0 +1,81 @@
+/* Сначала импортируем normalize, чтобы сбросить стили браузера */
+@import url('../vendor/normalize.css');
+/* Затем подключаем наши шрифты */
+@import url('../fonts/fonts.css');
+/* После этого — стили для всех остальных блоков */
+
+/* Тут будут импорты для всех блоков. Пока оставим так. */
+
+/* pages/index.css */
+@import url('../vendor/normalize.css');
+@import url('../fonts/fonts.css');
+/* --- Добавьте эту строку --- */
+@import url('../blocks/page.css');
+
+/* Тут будут импорты для остальных блоков. */
+/* pages/index.css */
+@import url('../vendor/normalize.css');
+@import url('../fonts/fonts.css');
+@import url('../blocks/page.css');
+/* --- Добавьте эту строку --- */
+@import url('../blocks/header.css');
+
+/* Тут будут импорты для остальных блоков. */
+/* pages/index.css */
+@import url('../vendor/normalize.css');
+@import url('../fonts/fonts.css');
+@import url('../blocks/page.css');
+@import url('../blocks/header.css');
+/* --- Добавьте эту строку --- */
+@import url('../blocks/lead.css');
+
+/* Тут будут импорты для остальных блоков. */
+
+/* pages/index.css */
+@import url('../vendor/normalize.css');
+@import url('../fonts/fonts.css');
+@import url('../blocks/page.css');
+@import url('../blocks/header.css');
+@import url('../blocks/lead.css');
+/* --- Добавьте эту строку --- */
+@import url('../blocks/intro.css');
+
+/* Тут будут импорты для остальных блоков. */
+
+/* pages/index.css */
+@import url('../vendor/normalize.css');
+@import url('../fonts/fonts.css');
+@import url('../blocks/page.css');
+@import url('../blocks/header.css');
+@import url('../blocks/lead.css');
+@import url('../blocks/intro.css');
+/* --- Добавьте эту строку --- */
+@import url('../blocks/photo-grid.css');
+
+/* Тут будут импорты для остальных блоков. */
+
+/* pages/index.css */
+@import url('../vendor/normalize.css');
+@import url('../fonts/fonts.css');
+@import url('../blocks/page.css');
+@import url('../blocks/header.css');
+@import url('../blocks/lead.css');
+@import url('../blocks/intro.css');
+@import url('../blocks/photo-grid.css');
+/* --- Добавьте эту строку --- */
+@import url('../blocks/place.css');
+
+/* Тут будут импорты для остальных блоков. */
+
+/* pages/index.css */
+@import url('../vendor/normalize.css');
+@import url('../fonts/fonts.css');
+@import url('../blocks/page.css');
+@import url('../blocks/header.css');
+@import url('../blocks/lead.css');
+@import url('../blocks/intro.css');
+@import url('../blocks/photo-grid.css');
+@import url('../blocks/place.css');
+/* --- Добавьте эти 2 строки --- */
+@import url('../blocks/cover.css');
+@import url('../blocks/footer.css');

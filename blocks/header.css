@@ -1,0 +1,73 @@
+/* blocks/header.css */
+
+.header {
+    display: flex; /* 1. Включаем Flexbox */
+    justify-content: space-between; /* 2. Элементы разойдутся по краям */
+    align-items: center; /* 3. Выравниваем по вертикали */
+    padding: 28px 48px 0; /* 4. Внутренние отступы: 28px сверху, по 48px по бокам, 0 снизу */
+}
+
+/* Логотип мы сделаем через background-image, чтобы его можно было легко менять */
+.header__logo {
+    width: 176px;
+    height: 52px;
+    background-image: url(../images/header-logo.svg); /* 5. Убедитесь, что у вас есть этот файл */
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.header__lang-links {
+    list-style: none; /* Убираем маркеры у списка */
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 18px; /* Расстояние между ссылками */
+}
+
+.header__lang-link {
+    color: #FFFFFF;
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    font-size: 24px;
+    line-height: 28px;
+    transition: opacity 0.3s ease; /* 6. Плавный переход для ховера */
+}
+
+/* Состояние при наведении */
+.header__lang-link:hover {
+    opacity: 0.8;
+}
+
+/* Модификатор для активной ссылки */
+.header__lang-link_active {
+    text-decoration: underline; /* Добавляем подчеркивание только активной ссылке */
+}
+
+
+/* ========== АДАПТИВНОСТЬ ========== */
+
+/* Для планшетов (ширина экрана от 768px до 1023px) */
+@media screen and (max-width: 1023px) {
+    .header {
+        padding-left: 24px; /* Уменьшаем боковые отступы */
+        padding-right: 24px;
+    }
+}
+
+/* Для мобильных устройств (ширина экрана до 767px) */
+@media screen and (max-width: 767px) {
+    .header {
+        padding-top: 16px; /* Уменьшаем верхний отступ */
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .header__logo {
+        width: 142px; /* Уменьшаем размер логотипа */
+        height: 42px;
+    }
+
+    .header__lang-link {
+        font-size: 18px; /* Уменьшаем размер шрифта ссылок */
+        line-height: 20px;
+    }
+}
